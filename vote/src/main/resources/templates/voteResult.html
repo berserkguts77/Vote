@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>게시판 목록</title>
+
+</head>
+
+<body>
+
+
+
+<div class="card-body">
+            <h3>투표결과</h3>
+            1. 김동렬 &amp; 임홍근<br>
+            2. 문효균 &amp; 임명심<br>
+            3. 백승한 &amp; 양소미<br>
+            4. 오상택 &amp; 최치원<br>
+            5. 박찬업 &amp; 윤예찬<br>
+            6. 정다금 &amp; 홍승윤<br>
+            7. 유지수 &amp; 이다은<br>
+            8. 박기훈 &amp; 주선태
+</div>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Ranking</th>
+            <th>Team NO</th>
+            <th>Total Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="l : ${list}">
+        	<!-- <td th:text="${++i}"></td> -->
+		   	<td th:text="${l.team}"></td>
+		    <td th:text="${l.score}"></td>
+		</tr>
+    </tbody>
+</table>
+</body>
+</html>

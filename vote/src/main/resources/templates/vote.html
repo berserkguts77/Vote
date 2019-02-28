@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>투표 입력 화면</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#btn').click(function(){
+            $('#voteForm').submit();
+        });
+    });
+</script>
+
+
+</head>
+<body>
+
+<form id="voteForm" method="post" action="/voteAction">
+	<table class="table table-dark table-striped">
+	    <tr>
+	        <td>Team</td>
+	        <td>
+	            <select name="team">
+	                <option value="1">1. 김동렬 &amp; 임홍근</option>
+	                <option value="2">2. 문효균 &amp; 임명심</option>
+	                <option value="3">3. 백승한 &amp; 양소미</option>
+	                <option value="4">4. 오상택 &amp; 최치원</option>
+	                <option value="5">5. 박찬업 &amp; 윤예찬</option>
+	                <option value="6">6. 정다금 &amp; 홍승윤</option>
+	                <option value="7">7. 유지수 &amp; 임명심</option>
+	                <option value="8">8. 박기훈 &amp; 주선태</option>
+	            </select>
+	        </td>            
+	    </tr>
+	    
+	    <tr>
+	        <td>기능 완성도</td>
+	        <td><input name="completion" type="range" min="70" max="100" step="10" value="70"></td>
+	    </tr>
+	    
+	    <tr>
+	        <td>UI(디자인)</td>
+	        <td><input name="ui" type="range" min="70" max="100" step="10" value="70"></td>
+	    </tr>
+	    
+	    <tr>
+	        <td>UX(편의성)</td>
+	        <td><input name="ux" type="range" min="70" max="100" step="10" value="70"></td>
+	    </tr>
+	    
+	    <tr>
+	        <td>협동심</td>
+	        <td><input name="collaboration" type="range" min="70" max="100" step="10" value="70"></td>
+	    </tr>
+	    
+	    <tr>
+	        <td>발표</td>
+	        <td><input name="presentation" type="range" min="70" max="100" step="10" value="70"></td>
+	    </tr>
+	    
+	    <tr>
+	        <td colspan="2">
+	            <button type="reset" class="btn btn-primary">초기화</button> <!-- submit -->
+	            <button type="button" id="btn" class="btn btn-primary">투표하기</button>
+	        </td>
+	    </tr>
+	</table>
+</form>
+</body>
+</html>
