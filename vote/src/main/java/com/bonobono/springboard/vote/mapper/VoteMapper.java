@@ -1,6 +1,7 @@
 package com.bonobono.springboard.vote.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,5 +14,5 @@ public interface VoteMapper {
 	int insertVote(Vote vote);
 	
 	// DB에 각자 채점한 점수들을 합산하여 순위를 얻어내는 검색을 한다.
-	List<Vote> selectVoteList();
+	List<Map<String,Integer>> selectVoteList();
 }

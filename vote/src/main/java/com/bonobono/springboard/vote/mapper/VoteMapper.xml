@@ -32,8 +32,12 @@
 	</insert>
 	
 	<select id="selectVoteList"
-			parameterType="java.util.Map"
-			resultType="com.bonobono.springboard.vote.vo.Vote">
+			resultType="java.util.Map">
+			<!-- 리스트를 받아오는데 그걸 맵으로 받기 때문에 resultTYpe을 Map으로
+				 그리고 team은 Vo에 있지만 score는 Vo에 field로 존재하지 않기 때문에
+				 Map으로 받아야 한다. 
+				 com.bonobono.springboard.vote.vo.Vote으로 설정해놓았다가
+				 많은 시행착오를 겪었다.-->
 			SELECT team, sum(completion+ui+ux+collaboration+presentation) score 
 	        FROM vote 
 	        GROUP BY team 

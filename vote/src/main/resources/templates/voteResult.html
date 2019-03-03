@@ -5,9 +5,11 @@
 
 <title>게시판 목록</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 
-<body>
+<body class="container">
 
 
 
@@ -32,8 +34,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr th:each="l : ${list}">
-        	<!-- <td th:text="${++i}"></td> -->
+        <tr th:each="l, index : ${list}">
+        	<td th:text="${index.index+1}"></td>
 		   	<td th:text="${l.team}"></td>
 		    <td th:text="${l.score}"></td>
 		</tr>

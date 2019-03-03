@@ -1,6 +1,7 @@
 package com.bonobono.springboard.vote.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class VoteService {
 	}
 	
 	// 순위 검색
-	public List<Vote> getVoteList(){
+	public  List<Map<String, Integer>> getVoteList(){
 		return voteMapper.selectVoteList();
 	}
 	

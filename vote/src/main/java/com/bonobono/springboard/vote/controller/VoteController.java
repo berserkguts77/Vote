@@ -1,6 +1,7 @@
 package com.bonobono.springboard.vote.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -47,8 +48,9 @@ public class VoteController {
 	@GetMapping("voteResult")
 	public String getVoteList(Model model) {
 		System.out.println("vote 결과 및 순위 확인");
-		List<Vote> list = voteService.getVoteList();
+		List<Map<String,Integer>> list = voteService.getVoteList();
 		model.addAttribute("list", list);
+		System.out.println("list ->"+list);
 		return "voteResult";
 	}
 }
